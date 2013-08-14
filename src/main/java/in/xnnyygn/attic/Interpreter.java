@@ -16,9 +16,10 @@ public class Interpreter {
       FileNotFoundException {
     Parser parser = new SpaceSeparatedValueParser();
     DirectiveFactory directiveFactory = new ClassNameDirectiveFactory();
+    DirectiveContext directiveContext = new DefaultDirectiveContext();
     for (Directive directive : directiveFactory.create(parser
         .apply(retrieveInput(args)))) {
-      directive.execute();
+      directive.execute(directiveContext);
     }
   }
 
