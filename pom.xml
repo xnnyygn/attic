@@ -52,6 +52,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
+							<classpathPrefix>dependency/</classpathPrefix>
 							<mainClass>in.xnnyygn.attic.Interpreter</mainClass>
 						</manifest>
 					</archive>
