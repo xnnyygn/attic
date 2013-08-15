@@ -26,6 +26,11 @@ public class Command {
     return arguments;
   }
 
+  public String getArgument(int index) {
+    if (index == 0) return name;
+    return arguments.get(index - 1);
+  }
+
   @Override
   public String toString() {
     return String.format("Command [name=%s, arguments=%s]", name, arguments);

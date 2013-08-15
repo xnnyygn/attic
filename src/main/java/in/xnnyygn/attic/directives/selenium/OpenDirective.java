@@ -11,14 +11,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class OpenDirective implements Directive {
-  
+
   public OpenDirective(Command command) {
   }
 
   public void execute(DirectiveContext context) {
-    WebDriver driver = new FirefoxDriver();
-    driver.get(buildUrl(context));
-    context.setVariable("selenium.driver", driver);
+    getWebDriver(context).get(buildUrl(context));
+  }
+
+  private WebDriver getWebDriver(DirectiveContext context) {
+    WebDriver driver = (WebDriver) context.getVariable("selenium.driver");
+    if (driver == null) {
+      driver = new FirefoxDriver();
+      context.setVariable("selenium.driver", driver);
+    }
+    return driver;
   }
 
   private String buildUrl(DirectiveContext context) {

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class HttpParams {
 
@@ -17,6 +18,10 @@ public class HttpParams {
       params.put(name, new ArrayList<String>());
     }
     params.get(name).add(value);
+  }
+
+  public String getParamValue(String name) {
+    return params.containsKey(name) ? params.get(name).get(0) : null;
   }
 
   public String toQueryString() throws UnsupportedEncodingException {
@@ -31,6 +36,10 @@ public class HttpParams {
     if (!params.isEmpty())
       queryStringBuilder.deleteCharAt(queryStringBuilder.length() - 1);
     return queryStringBuilder.toString();
+  }
+
+  public Set<String> getNames() {
+    return params.keySet();
   }
 
   @Override

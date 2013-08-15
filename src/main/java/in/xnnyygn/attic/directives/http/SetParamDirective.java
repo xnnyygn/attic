@@ -4,8 +4,6 @@ import in.xnnyygn.attic.Command;
 import in.xnnyygn.attic.Directive;
 import in.xnnyygn.attic.DirectiveContext;
 
-import java.util.List;
-
 public class SetParamDirective implements Directive {
 
   private static final String VAR_KEY = "http.params";
@@ -13,9 +11,12 @@ public class SetParamDirective implements Directive {
   private final String value;
 
   public SetParamDirective(Command command) {
-    List<String> args = command.getArguments();
-    name = args.get(0);
-    value = args.get(1);
+    this(command.getArgument(1), command.getArgument(2));
+  }
+
+  public SetParamDirective(String name, String value) {
+    this.name = name;
+    this.value = value;
   }
 
   public void execute(DirectiveContext context) {
