@@ -5,7 +5,11 @@
 *.war
 *.ear
 
+# vim swap file
+*.swp
+
 /target
 /.project
 /.classpath
 /.settings
+/attic-scala/target
