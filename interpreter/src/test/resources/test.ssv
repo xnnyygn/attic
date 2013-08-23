@@ -1,0 +1,9 @@
+Pause 1000
+Println Hi!
+http.SetUri http://www.google.com/
+EchoVariable http.uri
+http.SetParam q foo
+EchoVariable http.params
+selenium.Open
+selenium.VerifyText .foo hello
+selenium.Close

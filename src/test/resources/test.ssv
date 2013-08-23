@@ -1,5 +1,0 @@
-http.SetUri http://cn.bing.com/search
-http.SetParam q foo
-selenium.Open
-Pause 2000
-selenium.Close

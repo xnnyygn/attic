@@ -8,8 +8,7 @@
 # vim swap file
 *.swp
 
-/target
-/.project
-/.classpath
-/.settings
-/attic-scala/target
+target
+.project
+.classpath
+.settings
