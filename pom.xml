@@ -12,6 +12,7 @@
 		<module>api</module>
 		<module>interpreter</module>
 	  <module>command</module>
+		<module>test</module>
 	</modules>
 
 	<properties>
