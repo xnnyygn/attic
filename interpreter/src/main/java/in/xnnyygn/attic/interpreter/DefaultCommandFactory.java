@@ -3,16 +3,11 @@ package in.xnnyygn.attic.interpreter;
 import in.xnnyygn.attic.api.Command;
 import in.xnnyygn.attic.api.CommandArguments;
 
-import java.util.Arrays;
 import java.util.Collection;
 
 public class DefaultCommandFactory {
 
   private final Collection<String> packages;
-
-  public DefaultCommandFactory() {
-    this(Arrays.asList("in.xnnyygn.attic.command"));
-  }
 
   public DefaultCommandFactory(Collection<String> packages) {
     super();

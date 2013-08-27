@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class HttpParams {
 
+  private static final List<String> NIL = new ArrayList<String>(0);
   private Map<String, List<String>> paramMap =
       new HashMap<String, List<String>>();
 
@@ -16,6 +18,20 @@ public class HttpParams {
     paramMap.put(name, values);
   }
 
+  public String getValue(String name) {
+    List<String> values = getValues(name);
+    return values.isEmpty() ? null : values.get(0);
+  }
+
+  public List<String> getValues(String name) {
+    return paramMap.containsKey(name) ? paramMap.get(name) : NIL;
+  }
+
+  public Set<String> getNames() {
+    return paramMap.keySet();
+  }
+
+  // TODO add encoding support
   public String toQueryString() {
     StringBuilder queryString = new StringBuilder();
     for (Map.Entry<String, List<String>> pair : paramMap.entrySet()) {
