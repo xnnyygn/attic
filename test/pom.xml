@@ -20,17 +20,7 @@
 		</dependency>
 		<dependency>
 			<groupId>in.xnnyygn.attic</groupId>
-			<artifactId>attic-command-core</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>in.xnnyygn.attic</groupId>
-			<artifactId>attic-command-http</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>in.xnnyygn.attic</groupId>
-			<artifactId>attic-command-selenium</artifactId>
+			<artifactId>attic-command</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 		<dependency>

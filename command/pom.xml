@@ -8,16 +8,48 @@
 		<version>1.0.0</version>
 	</parent>
 
-	<artifactId>attic-command-parent</artifactId>
-	<packaging>pom</packaging>
-	<name>Attic Command Parent</name>
+	<artifactId>attic-command</artifactId>
+	<packaging>jar</packaging>
+	<name>Attic Command</name>
 
-	<modules>
-		<module>core</module>
-		<module>http</module>
-		<module>httpclient</module>
-	  <module>selenium</module>
-	  <module>xml</module>
-	</modules>
+	<dependencies>
+		<dependency>
+			<groupId>in.xnnyygn.attic</groupId>
+			<artifactId>attic-api</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<version>1.1.1</version>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>2.33.0</version>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+	</dependencies>
 
 </project>
