@@ -1,11 +1,13 @@
 package in.xnnyygn.attic.interpreter;
 
-import static org.apache.commons.io.IOUtils.readLines;
 import in.xnnyygn.attic.api.CommandContext;
 import in.xnnyygn.attic.api.DefaultCommandContext;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -37,6 +39,27 @@ public class Interpreter {
 
   public void interpret(String fileName) throws IOException {
     interpret(readLines(new FileInputStream(fileName)));
+  }
+
+  List<String> readLines(InputStream in) throws IOException {
+    BufferedReader reader = null;
+    try {
+      reader = new BufferedReader(new InputStreamReader(in));
+      List<String> lines = new ArrayList<String>();
+      String line = null;
+      while ((line = reader.readLine()) != null)
+        lines.add(line);
+      return lines;
+    } catch (IOException e) {
+      throw e;
+    } finally {
+      if (reader != null) {
+        try {
+          reader.close();
+        } catch (IOException e) {
+        }
+      }
+    }
   }
 
   public void interpret(Collection<String> lines) {
