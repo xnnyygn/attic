@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>in.xnnyygn.attic</groupId>
+		<artifactId>attic-command-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	
+	<artifactId>attic-command-httpclient</artifactId>
+	<packaging>jar</packaging>
+	<name>Attic Command Http Client</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>in.xnnyygn.attic</groupId>
+			<artifactId>attic-api</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>in.xnnyygn.attic</groupId>
+			<artifactId>attic-command-http</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>

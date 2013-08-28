@@ -1,6 +1,5 @@
-package in.xnnyygn.attic.interpreter;
+package in.xnnyygn.attic.api;
 
-import in.xnnyygn.attic.api.CommandContext;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,7 +7,7 @@ import java.util.Map;
 public class DefaultCommandContext implements CommandContext {
 
   private final Map<String, Object> variableMap = new HashMap<String, Object>();
-
+  
   public boolean containsVariable(String key) {
     return variableMap.containsKey(key);
   }

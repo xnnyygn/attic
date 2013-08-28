@@ -11,5 +11,12 @@
 	<artifactId>attic-api</artifactId>
 	<packaging>jar</packaging>
 	<name>Attic Api</name>
+	
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+	</dependencies>
 
 </project>

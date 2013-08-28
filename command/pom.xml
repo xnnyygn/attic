@@ -15,7 +15,9 @@
 	<modules>
 		<module>core</module>
 		<module>http</module>
+		<module>httpclient</module>
 	  <module>selenium</module>
+	  <module>xml</module>
 	</modules>
 
 </project>

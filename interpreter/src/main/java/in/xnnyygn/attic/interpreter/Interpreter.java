@@ -2,9 +2,9 @@ package in.xnnyygn.attic.interpreter;
 
 import static org.apache.commons.io.IOUtils.readLines;
 import in.xnnyygn.attic.api.CommandContext;
+import in.xnnyygn.attic.api.DefaultCommandContext;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,10 +35,13 @@ public class Interpreter {
     return l;
   }
 
-  public void interpret(String fileName) throws FileNotFoundException,
-      IOException {
+  public void interpret(String fileName) throws IOException {
+    interpret(readLines(new FileInputStream(fileName)));
+  }
+
+  public void interpret(Collection<String> lines) {
     CommandContext context = new DefaultCommandContext();
-    for (String line : readLines(new FileInputStream(fileName))) {
+    for (String line : lines) {
       if (line.length() > 0 && !line.startsWith("#")) {
         commandFactory.create(line).execute(context);
       }
