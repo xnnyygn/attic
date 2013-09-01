@@ -7,17 +7,27 @@ import java.util.List;
 public class DefaultCommandArguments implements CommandArguments {
 
   private final List<String> arguments;
-  
-  public DefaultCommandArguments(String ... arguments) {
+
+  public DefaultCommandArguments(String... arguments) {
     this(Arrays.asList(arguments));
   }
 
   public DefaultCommandArguments(List<String> arguments) {
+    if (arguments.isEmpty())
+      throw new IllegalArgumentException("arguments should not be empty");
     this.arguments = arguments;
   }
 
-  public String get(int index) {
+  public String getName() {
+    return arguments.get(0);
+  }
+
+  public String getParameter(int index) {
     return arguments.get(index);
+  }
+
+  public int getParameterCount() {
+    return arguments.size() - 1;
   }
 
 }

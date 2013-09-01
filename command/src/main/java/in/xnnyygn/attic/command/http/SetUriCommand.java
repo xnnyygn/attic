@@ -10,7 +10,7 @@ public class SetUriCommand implements Command {
   private String uri;
 
   public void setArguments(CommandArguments arguments) {
-    uri = arguments.get(0);
+    uri = arguments.getParameter(1);
   }
 
   public void execute(CommandContext context) {

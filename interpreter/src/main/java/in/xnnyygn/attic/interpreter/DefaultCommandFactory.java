@@ -1,11 +1,9 @@
 package in.xnnyygn.attic.interpreter;
 
-import static in.xnnyygn.attic.util.CollectionUtils.tail;
 import in.xnnyygn.attic.api.Command;
 import in.xnnyygn.attic.api.CommandArguments;
 import in.xnnyygn.attic.api.DefaultCommandArguments;
 
-import java.util.Arrays;
 import java.util.Collection;
 
 public class DefaultCommandFactory {
@@ -17,15 +15,13 @@ public class DefaultCommandFactory {
     this.packages = packages;
   }
 
-  public Command create(String line) {
-    String[] cmdWithArgs = line.split("\\s");
-    CommandArguments arguments =
-        new DefaultCommandArguments(tail(Arrays.asList(cmdWithArgs)));
-    return newCommand(cmdWithArgs[0], arguments);
+  public Command create(String[] arguments) {
+    return newCommand(new DefaultCommandArguments(arguments));
   }
 
-  private Command newCommand(String commandName, CommandArguments arguments) {
-    Command command = newCommandInstance(searchCommandClass(commandName));
+  private Command newCommand(CommandArguments arguments) {
+    Command command =
+        newCommandInstance(searchCommandClass(arguments.getName()));
     command.setArguments(arguments);
     return command;
   }

@@ -16,9 +16,9 @@ public class AssertNodeTextCommand implements Command {
   private String expectedText;
 
   public void setArguments(CommandArguments arguments) {
-    variableName = arguments.get(0);
-    xpath = arguments.get(1);
-    expectedText = arguments.get(2);
+    variableName = arguments.getParameter(1);
+    xpath = arguments.getParameter(2);
+    expectedText = arguments.getParameter(3);
   }
 
   public void execute(CommandContext context) {

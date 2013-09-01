@@ -11,18 +11,22 @@ public class AssertNodeTextCommandTest {
   @Test
   public void testExecute() {
     AssertNodeTextCommand command = new AssertNodeTextCommand();
-    command.setArguments(new DefaultCommandArguments("xml", "/users/user/name", "xnnyygn"));
+    command.setArguments(new DefaultCommandArguments("AssertNodeText", "xml",
+        "/users/user/name", "xnnyygn"));
     CommandContext context = new DefaultCommandContext();
-    context.setVariable("xml", "<users><user><name>xnnyygn</name></user></users>");
+    context.setVariable("xml",
+        "<users><user><name>xnnyygn</name></user></users>");
     command.execute(context);
   }
 
   @Test(expected = IllegalStateException.class)
   public void testExecuteFail() {
     AssertNodeTextCommand command = new AssertNodeTextCommand();
-    command.setArguments(new DefaultCommandArguments("xml", "/users/user/name", "xy"));
+    command.setArguments(new DefaultCommandArguments("AssertNodeText", "xml",
+        "/users/user/name", "xy"));
     CommandContext context = new DefaultCommandContext();
-    context.setVariable("xml", "<users><user><name>xnnyygn</name></user></users>");
+    context.setVariable("xml",
+        "<users><user><name>xnnyygn</name></user></users>");
     command.execute(context);
   }
 

@@ -11,8 +11,8 @@ public class SetParamCommand implements Command {
   private String value;
 
   public void setArguments(CommandArguments arguments) {
-    name = arguments.get(0);
-    value = arguments.get(1);
+    name = arguments.getParameter(1);
+    value = arguments.getParameter(2);
   }
 
   public void execute(CommandContext context) {

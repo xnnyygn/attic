@@ -15,8 +15,8 @@ public class VerifyTextCommand implements Command {
   private String text;
 
   public void setArguments(CommandArguments arguments) {
-    selector = arguments.get(0);
-    text = arguments.get(1);
+    selector = arguments.getParameter(1);
+    text = arguments.getParameter(2);
   }
 
   public void execute(CommandContext context) {

@@ -9,7 +9,7 @@ public class PauseCommand implements Command {
   private long millis;
 
   public void setArguments(CommandArguments arguments) {
-    millis = Long.parseLong(arguments.get(0));
+    millis = Long.parseLong(arguments.getParameter(1));
   }
 
   public void execute(CommandContext context) {
