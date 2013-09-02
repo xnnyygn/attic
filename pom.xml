@@ -12,7 +12,7 @@
 		<module>api</module>
 		<module>interpreter</module>
 	  <module>command</module>
-		<module>test</module>
+		<module>assembly</module>
 	</modules>
 
 	<properties>

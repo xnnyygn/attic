@@ -1,8 +1,0 @@
-Pause 1000
-Println "Hello, world!"
-http.SetUri http://www.google.com/
-EchoVariable http.uri
-http.SetParam q foo
-EchoVariable http.params
-selenium.Open
-selenium.Close
