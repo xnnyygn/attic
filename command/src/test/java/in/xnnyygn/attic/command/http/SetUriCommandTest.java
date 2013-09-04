@@ -1,6 +1,6 @@
 package in.xnnyygn.attic.command.http;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import in.xnnyygn.attic.api.CommandContext;
 import in.xnnyygn.attic.api.DefaultCommandArguments;
 import in.xnnyygn.attic.api.DefaultCommandContext;
@@ -16,7 +16,7 @@ public class SetUriCommandTest {
     command.setArguments(new DefaultCommandArguments("SetUri", uri));
     CommandContext context = new DefaultCommandContext();
     command.execute(context);
-    assertEquals(uri, context.getVariable(HttpCommandVariables.URI));
+    assertEquals(uri, context.getVariable(HttpCommandConstants.VAR_URI));
   }
 
 }
