@@ -1,5 +1,7 @@
 package in.xnnyygn.attic.command.http;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,14 +32,14 @@ public class HttpParams {
   public Set<String> getNames() {
     return paramMap.keySet();
   }
-
-  // TODO add encoding support
-  public String toQueryString() {
+  
+  public String toQueryString(String encoding) {
     StringBuilder queryString = new StringBuilder();
     for (Map.Entry<String, List<String>> pair : paramMap.entrySet()) {
       String name = pair.getKey();
       for (String value : pair.getValue()) {
-        queryString.append(name).append('=').append(value).append('&');
+        queryString.append(name).append('=');
+        queryString.append(encode(value, encoding)).append('&');
       }
     }
     // remove trailing &
@@ -45,10 +47,19 @@ public class HttpParams {
     return queryString.toString();
   }
 
+  private String encode(String string, String encoding) {
+    try {
+      return URLEncoder.encode(string, encoding);
+    } catch (UnsupportedEncodingException e) {
+      System.err.println(String.format(
+          "failed to encode [%s] with encoding [%s]", string, encoding));
+      return string;
+    }
+  }
+
   @Override
   public String toString() {
     return paramMap.toString();
   }
-
 
 }

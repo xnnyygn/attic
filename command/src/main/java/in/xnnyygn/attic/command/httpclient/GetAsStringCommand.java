@@ -1,10 +1,12 @@
 package in.xnnyygn.attic.command.httpclient;
 
+import static in.xnnyygn.attic.command.http.HttpCommandConstants.VAR_URI;
+import static in.xnnyygn.attic.command.http.HttpCommandUtils.getEncoding;
 import static in.xnnyygn.attic.command.http.HttpCommandUtils.getOrCreateHttpParam;
-import static in.xnnyygn.attic.command.http.HttpCommandVariables.URI;
 import in.xnnyygn.attic.api.Command;
 import in.xnnyygn.attic.api.CommandArguments;
 import in.xnnyygn.attic.api.CommandContext;
+import in.xnnyygn.attic.command.http.HttpParams;
 
 import java.io.IOException;
 
@@ -20,8 +22,9 @@ public class GetAsStringCommand implements Command {
   }
 
   public void execute(CommandContext context) {
-    GetMethod method = new GetMethod((String) context.getVariable(URI));
-    method.setQueryString(getOrCreateHttpParam(context).toQueryString());
+    GetMethod method = new GetMethod((String) context.getVariable(VAR_URI));
+    HttpParams params = getOrCreateHttpParam(context);
+    method.setQueryString(params.toQueryString(getEncoding(context)));
     try {
       client.executeMethod(method);
       context.setVariable(RESPONSE_STRING, method.getResponseBodyAsString());

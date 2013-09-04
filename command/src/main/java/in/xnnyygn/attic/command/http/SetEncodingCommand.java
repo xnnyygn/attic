@@ -1,20 +1,19 @@
 package in.xnnyygn.attic.command.http;
 
-import static in.xnnyygn.attic.command.http.HttpCommandConstants.VAR_URI;
 import in.xnnyygn.attic.api.Command;
 import in.xnnyygn.attic.api.CommandArguments;
 import in.xnnyygn.attic.api.CommandContext;
 
-public class SetUriCommand implements Command {
+public class SetEncodingCommand implements Command {
 
-  private String uri;
-
+  private String encoding;
+  
   public void setArguments(CommandArguments arguments) {
-    uri = arguments.getParameter(1);
+    encoding = arguments.getParameter(1);
   }
 
   public void execute(CommandContext context) {
-    context.setVariable(VAR_URI, uri);
+    context.setVariable(HttpCommandConstants.VAR_ENCODING, encoding);
   }
 
 }

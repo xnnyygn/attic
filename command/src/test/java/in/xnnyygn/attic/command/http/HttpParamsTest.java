@@ -41,7 +41,14 @@ public class HttpParamsTest {
   public void testToQueryString() {
     HttpParams params = new HttpParams();
     params.set("foo", "a");
-    assertEquals("foo=a", params.toQueryString());
+    assertEquals("foo=a", params.toQueryString("UTF-8"));
+  }
+
+  @Test
+  public void testToQueryStringEncode() {
+    HttpParams params = new HttpParams();
+    params.set("foo", "a b");
+    assertEquals("foo=a+b", params.toQueryString("UTF-8"));
   }
 
 }
