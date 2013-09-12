@@ -25,6 +25,15 @@ public class DefaultCommandArgumentsTest {
     assertEquals("1", arguments.getParameter(1));
     assertEquals("2", arguments.getParameter(2));
   }
+  
+  @Test
+  public void testGetParameterWithDefaultValue() {
+    DefaultCommandArguments arguments =
+        new DefaultCommandArguments("foo", "1", "2");
+    assertEquals("1", arguments.getParameter(1));
+    assertEquals("2", arguments.getParameter(2));
+    assertEquals("3", arguments.getParameter(3, "3"));
+  }
 
   @Test
   public void testGetParameterCount() {

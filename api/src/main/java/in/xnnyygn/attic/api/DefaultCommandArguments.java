@@ -1,6 +1,5 @@
 package in.xnnyygn.attic.api;
 
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,6 +23,11 @@ public class DefaultCommandArguments implements CommandArguments {
 
   public String getParameter(int index) {
     return arguments.get(index);
+  }
+
+  public String getParameter(int index, String defaultValue) {
+    if (index > getParameterCount()) return defaultValue;
+    return getParameter(index);
   }
 
   public int getParameterCount() {

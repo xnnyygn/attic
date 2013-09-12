@@ -3,6 +3,7 @@ package in.xnnyygn.attic.command.http;
 public class HttpCommandConstants {
 
   public static final String VAR_URI = "http.uri";
+  public static final String VAR_URL = "http.url";
   public static final String VAR_PARAMS = "http.params";
   public static final String VAR_ENCODING = "http.encoding";
   
