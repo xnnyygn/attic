@@ -12,8 +12,8 @@ mvn package
 ~~~
 http.SetUri http://www.google.com/search
 http.SetParam q foo
-selenium.Get
-selenium.AssertCurrentUrlMatches .*foo.*
+selenium.GetBy htmlunit
+selenium.AssertCurrentTitleMatches ^foo.*$
 selenium.Close
 ~~~
 
@@ -52,6 +52,7 @@ selenium.Close
 | `selenium.Open`                            | same as selenium.Get |
 | `selenium.VerifyText <selector> <text>`    | verify text of selected element by selenium |
 | `selenium.AssertCurrentUrlMatches <regex>` | |
+| `selenium.AssertCurrentTitleMatches <regex>` | |
 | `selenium.Close` | close web driver, if no web driver, do nothing |
 
 ## Command Development ##
