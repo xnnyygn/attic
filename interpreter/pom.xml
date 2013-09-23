@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>in.xnnyygn.attic</groupId>
 		<artifactId>attic-parent</artifactId>
-		<version>1.1.0</version>
+		<version>1.2.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>attic-interpreter</artifactId>
@@ -16,7 +16,7 @@
 		<dependency>
 			<groupId>in.xnnyygn.attic</groupId>
 			<artifactId>attic-api</artifactId>
-			<version>1.1.0</version>
+			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

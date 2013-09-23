@@ -4,7 +4,7 @@
 
 	<groupId>in.xnnyygn.attic</groupId>
 	<artifactId>attic-parent</artifactId>
-	<version>1.1.0</version>
+	<version>1.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Attic Parent</name>
 
